@@ -1,9 +1,0 @@
-Metadata-Version: 2.1
-Name: Twine-Test
-Version: 0.0.1
-Summary: A twine upload test
-Home-page: https://github.com/YousefEZ/twine-test
-Author: Yousef Zaher
-Author-email: syberprojects@gmail.com
-License: MIT
-Requires-Python: >=3.8.0

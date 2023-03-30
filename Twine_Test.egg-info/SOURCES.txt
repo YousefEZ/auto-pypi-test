@@ -1,6 +1,0 @@
-setup.py
-Twine_Test.egg-info/PKG-INFO
-Twine_Test.egg-info/SOURCES.txt
-Twine_Test.egg-info/dependency_links.txt
-Twine_Test.egg-info/top_level.txt
-twine-test_yousefez/__init__.py
