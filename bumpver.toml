@@ -1,0 +1,7 @@
+[bumpver]
+current_version = "0.0.1"
+version_pattern = "MAJOR.MINOR.PATCH"
+
+[bumpver:file_patterns]
+setup.py
+    version="{version}",$
