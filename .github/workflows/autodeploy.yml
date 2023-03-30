@@ -29,7 +29,7 @@ jobs:
             const version = pullRequest.body.match(/(?<=version: ).*/g)[0];
             core.setOutput("version", version);
       - name: Bump version
-        run: bumpver update --${{ steps.get_version.outputs.version }} --commit --tag --push
+        run: bumpver update --${{ steps.get_version.outputs.version }} --commit --push
       - name: Build Distribution
         run: python -m build
       - name: Publish distribution 📦 to Test PyPI
