@@ -2,4 +2,4 @@
 
 This is is an autodeploy workflow that automatically uploads to twine after using bumpver!
 
-## How to use this
+## How to use
