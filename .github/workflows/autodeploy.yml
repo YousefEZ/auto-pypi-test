@@ -32,7 +32,8 @@ jobs:
         run: bumpver --version ${{ steps.get_version.outputs.version }} --commit --tag --push
       - name: Build Distribution
         run: python -m build
-      - name: Publish to PyPI
-        run: |
-          TWINE_USERNAME=${{ secrets.TWINE_USERNAME }}
-          python -m twine upload --repository testpypi dist/*
+      - name: Publish distribution 📦 to Test PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          password: ${{ secrets.TWINE_USERNAME }}
+          repository-url: https://test.pypi.org/legacy/
