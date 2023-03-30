@@ -8,6 +8,8 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     if: github.event.pull_request.merged == true
+    env:
+      TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
     steps:
       - uses: actions/checkout@v2
       - name: Set up Python 3.8
@@ -23,7 +25,7 @@ jobs:
         id: get_version
         uses: actions/github-script@v3
         with:
-        github-token: ${{secrets.GITHUB_TOKEN}}
+          github-token: ${{secrets.GITHUB_TOKEN}}
         script: |
           const pullRequest = context.payload.pull_request;
           const version = pullRequest.body.match(/(?<=version: ).*/g)[0];
@@ -33,6 +35,4 @@ jobs:
       - name: Build Distribution
         run: python -m build
       - name: Publish to PyPI
-        env:
-        TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
-        run: py -m twine upload --repository testpypi dist/*twine upload dist/*
+        run: py -m twine upload --repository testpypi dist/*
