@@ -35,4 +35,4 @@ jobs:
       - name: Build Distribution
         run: python -m build
       - name: Publish to PyPI
-        run: py -m twine upload --repository testpypi dist/*
+        run: python -m twine upload --repository testpypi dist/*
