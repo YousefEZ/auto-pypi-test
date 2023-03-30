@@ -26,7 +26,7 @@ jobs:
         uses: actions/github-script@v3
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
-        script: |
+        run: |
           const pullRequest = context.payload.pull_request;
           const version = pullRequest.body.match(/(?<=version: ).*/g)[0];
           core.setOutput("version", version);
