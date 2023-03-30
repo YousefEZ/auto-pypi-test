@@ -26,10 +26,10 @@ jobs:
         uses: actions/github-script@v3
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
-        run: |
-          const pullRequest = context.payload.pull_request;
-          const version = pullRequest.body.match(/(?<=version: ).*/g)[0];
-          core.setOutput("version", version);
+          script: |
+            const pullRequest = context.payload.pull_request;
+            const version = pullRequest.body.match(/(?<=version: ).*/g)[0];
+            core.setOutput("version", version);
       - name: Bump version
         run: bumpver --version ${{ steps.get_version.outputs.version }} --commit --tag --push
       - name: Build Distribution
