@@ -34,5 +34,5 @@ jobs:
         run: python -m build
       - name: Publish to PyPI
         run: |
-        TWINE_USERNAME=${{ secrets.PYPI_USERNAME }}
-        python -m twine upload --repository testpypi dist/*
+          TWINE_USERNAME=${{ secrets.PYPI_USERNAME }}
+          python -m twine upload --repository testpypi dist/*
