@@ -17,7 +17,8 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install bumpver twine
+          pip install bumpver twine build
+          pip install build --upgrade
       - name: Get version from pull request description
         id: get_version
         uses: actions/github-script@v3
@@ -29,8 +30,9 @@ jobs:
           core.setOutput("version", version);
       - name: Bump version
         run: bumpver --version ${{ steps.get_version.outputs.version }} --commit --tag --push
+      - name: Build Distribution
+        run: python -m build
       - name: Publish to PyPI
         env:
         TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
-        TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
-        run: twine upload dist/*
+        run: py -m twine upload --repository testpypi dist/*twine upload dist/*
