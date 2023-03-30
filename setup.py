@@ -4,6 +4,7 @@ setup(
     name='Twine-Test',
     author="Yousef Zaher",
     author_email="syberprojects@gmail.com",
+    long_description=open('README.md').read(),
     url="https://github.com/YousefEZ/twine-test",
     version="0.0.1",
     description='A twine upload test',
