@@ -1,10 +1,6 @@
 name: Publish to Twine by getting version from Github pull request description and using bumpver to bump version and publish
 
 on:
-  push:
-    branches:
-      - master
-      - main
   pull_request:
     types: [ closed ]
 
