@@ -1,8 +1,5 @@
 from setuptools import find_packages, setup
 
-with open('requirements.txt') as f:
-    requirements = f.read().splitlines()
-
 setup(
     name='Twine-Test',
     author="Yousef Zaher",
@@ -13,5 +10,5 @@ setup(
     packages=find_packages(exclude=("test*",)),
     license='MIT',
     python_requires='>=3.8.0',
-    install_requires=requirements,
+    install_requires=[],
 )
