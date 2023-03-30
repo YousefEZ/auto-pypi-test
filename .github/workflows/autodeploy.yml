@@ -8,8 +8,6 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     if: github.event.pull_request.merged == true
-    env:
-      TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
     steps:
       - uses: actions/checkout@v2
       - name: Set up Python 3.8
@@ -35,4 +33,6 @@ jobs:
       - name: Build Distribution
         run: python -m build
       - name: Publish to PyPI
-        run: python -m twine upload --repository testpypi dist/*
+        run: |
+        TWINE_USERNAME=${{ secrets.PYPI_USERNAME }}
+        python -m twine upload --repository testpypi dist/*
