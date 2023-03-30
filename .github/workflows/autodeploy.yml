@@ -1,6 +1,10 @@
 name: Publish to Twine by getting version from Github pull request description and using bumpver to bump version and publish
 
 on:
+  push:
+    branches:
+      - master
+      - main
   pull_request:
     types: [ closed ]
 
@@ -29,7 +33,10 @@ jobs:
             const version = pullRequest.body.match(/(?<=version: ).*/g)[0];
             core.setOutput("version", version);
       - name: Bump version
-        run: bumpver update --${{ steps.get_version.outputs.version }} --commit --push
+        run: |
+          git config user.name AlBumperBot
+          git config user.email 41898282+AlBumperBot[bot]@users.noreply.github.com
+          bumpver update --${{ steps.get_version.outputs.version }} --commit --push
       - name: Build Distribution
         run: python -m build
       - name: Publish distribution 📦 to Test PyPI
