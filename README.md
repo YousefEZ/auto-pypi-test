@@ -1,6 +1,6 @@
 # 🚀 Twine-Autodeploy Workflow
 
-This is is an autodeploy workflow that automatically uploads to twine after using bumpver!
+This is is an autodeploy workflow that automatically bumps the version based on the PR description and then pushes to the repository and uploads to twine after using bumpver!
 
 ## ❔ How to use
 1. First ensure that you have an API token in the secrets, as ``TWINE_USERNAME``
