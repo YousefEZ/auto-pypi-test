@@ -13,8 +13,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Bump and Publisher Distribution to PyPi
-        uses: YousefEZ/auto-pypi@0.0.4
+        uses: YousefEZ/auto-pypi@0.0.6
         with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          twine-token: ${{ secrets.TWINE_USERNAME }}
+          githubtoken: ${{ secrets.GITHUB_TOKEN }}
+          twinetoken: ${{ secrets.TWINE_USERNAME }}
           
