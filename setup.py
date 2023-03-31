@@ -6,7 +6,7 @@ setup(
     author_email="syberprojects@gmail.com",
     long_description=open('README.md').read(),
     url="https://github.com/YousefEZ/twine-test",
-    version="3.0.0",
+    version="3.1.0",
     description='A twine upload test',
     packages=find_packages(exclude=("test*",)),
     license='MIT',
