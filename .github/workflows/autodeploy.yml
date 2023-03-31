@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.pull_request.merged == true
     permissions:
-      contents: read-write
+      contents: write
       pull-requests: read
     steps:
       - uses: actions/checkout@v2
