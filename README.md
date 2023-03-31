@@ -8,3 +8,4 @@ This is is an autodeploy workflow that automatically bumps the version based on 
 2. Make a ``bumpver.toml`` file to contain all the versions to be updated and the version pattern (look at the ``bumpver.toml`` example)
 3. When making a Pull Request simply place the string "version: " followed by either "major", "minor", or "patch" in the description, depending on what you want to bump.
 4. This is will bump the version on merge, make a new tag, and deploy it to PyPi
+
