@@ -9,3 +9,4 @@ This is is an autodeploy workflow that automatically bumps the version based on 
 3. When making a Pull Request simply place the string "version: " followed by either "major", "minor", or "patch" in the description, depending on what you want to bump. Note that "version: " is the default leading regex, but this is configurable under the regex input argument for the github action.
 5. This is will bump the version on merge, make a new tag, and deploy it to PyPi
 
+
