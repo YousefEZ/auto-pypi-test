@@ -20,7 +20,7 @@ jobs:
           persist-credentials: false
           ref: ${{ github.ref }}
       - name: Bump and Publisher Distribution to PyPi
-        uses: YousefEZ/auto-pypi@v1
+        uses: YousefEZ/auto-pypi@v1.0.2
         with:
           githubtoken: ${{ secrets.GITHUB_TOKEN }}
           twinetoken: ${{ secrets.TWINE_USERNAME }}
