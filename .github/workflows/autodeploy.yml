@@ -12,9 +12,13 @@ jobs:
       github.event.pull_request.base.ref == 'main'
     permissions:
       contents: write
-      pull-requests: read
+      pull-requests: write
     steps:
-      - uses: actions/checkout@v2
+      - name: 'Checkout source code'
+        uses: 'actions/checkout@v2'
+        with:
+          persist-credentials: false
+          ref: ${{ github.ref }}
       - name: Bump and Publisher Distribution to PyPi
         uses: YousefEZ/auto-pypi@1.0.1
         with:
